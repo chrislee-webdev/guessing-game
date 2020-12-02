@@ -28,6 +28,8 @@ const phrases = [
 
 let getRandomPhraseAsArray = phrases[Math.floor(Math.random() * phrases.length)];
 
+return getRandomPhraseAsArray;
+
 //Set Game Display
 
 
