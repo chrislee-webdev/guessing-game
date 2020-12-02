@@ -8,7 +8,7 @@ const startGame = document.querySelector('.btn__reset');
 
 let missed = 0;
 
-//Attch EventListener to START GAME Button to Hide Start Screen Overlay
+//Attach EventListener to START GAME Button to Hide Start Screen Overlay
 
 startGame.addEventListener('click', () => {
     overlay.style.display = 'none';
@@ -16,7 +16,7 @@ startGame.addEventListener('click', () => {
 
 //Create PHRASES ARRAY
 
-var phrases = [
+const phrases = [
     "showing off is the fools idea of glory",
     "as you think so shall you become",
     "the key to immortality is first living a life worth remembering",
@@ -24,6 +24,10 @@ var phrases = [
     "knowing is not enough we must apply willing is not enough we must do"
 ];
 
-//Create a getRandomPhrasesArray function
+//Create a getRandomPhraseAsArray function
+
+let getRandomPhraseAsArray = phrases[Math.floor(Math.random() * phrases.length)];
+
+//Set Game Display
 
 
