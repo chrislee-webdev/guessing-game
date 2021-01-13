@@ -1,7 +1,7 @@
 //Add Needed Variables
 
 const qwerty = document.getElementById('qwerty');
-const phrases = document.getElementById('phrase');
+const phrase = document.getElementById('phrase');
 const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay');
 
@@ -25,8 +25,8 @@ startGame.addEventListener('click', () => {
 
 //Create a getRandomPhrasesAsArray Function
 
-function getRandomPhrasesAsArray() => {
-
+function getRandomPhrasesAsArray(phrases) {
+    phrases[Math.floor(Math.random() * phrases.length)];
 };
 
 
