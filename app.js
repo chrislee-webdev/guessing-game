@@ -1,21 +1,13 @@
-
-//Get Elememts from HTML and Create MISSED Variable
+//Add Needed Variables
 
 const qwerty = document.getElementById('qwerty');
-const phrase = document.getElementById('phrase');
-const overlay = document.getElementById('overlay');
+const phrases = document.getElementById('phrase');
 const startGame = document.querySelector('.btn__reset');
-const phraseArray = getRandomPhraseAsArray(phrases);
+const overlay = document.getElementById('overlay');
 
 let missed = 0;
 
-//Attach EventListener to START GAME Button to Hide Start Screen Overlay
-
-startGame.addEventListener('click', () => {
-    overlay.style.display = 'none';
-});
-
-//Create PHRASES ARRAY
+//Create an Array Named Phrases
 
 const phrases = [
     "showing off is the fools idea of glory",
@@ -25,17 +17,17 @@ const phrases = [
     "knowing is not enough we must apply willing is not enough we must do"
 ];
 
-//Create a getRandomPhraseAsArray function
+//Attach an Event Listener to the 'Start Game' button to hide the start screen overlay
 
-let getRandomPhraseAsArray = phrases[Math.floor(Math.random() * phrases.length)];
+startGame.addEventListener('click', () => {
+    overlay.style.display = 'none';
+});
 
-return getRandomPhraseAsArray(phrases);
+//Create a getRandomPhrasesAsArray Function
 
-//Set Game Display
+function getRandomPhrasesAsArray() => {
 
-function addPhraseToDisplay(arr) {
-    for (let i = 0; i <= getRandomPhraseAsArray(phrases).length; i++) {  
-        
-    }
 };
+
+
 
