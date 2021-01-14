@@ -23,11 +23,23 @@ startGame.addEventListener('click', () => {
     overlay.style.display = 'none';
 });
 
-//Create a getRandomPhrasesAsArray Function
+//Create a getRandomPhraseAsArray Function
 
-function getRandomPhrasesAsArray(phrases) {
-    phrases[Math.floor(Math.random() * phrases.length)];
+const phraseSelect = phrases[Math.floor(Math.random() * phrases.length)];    
+
+function getRandomPhraseAsArray() {
+    
 };
+
+//Create an addPhraseToDisplay Function
+
+function addPhraseToDisplay() {
+
+};
+
+
+
+
 
 
 
