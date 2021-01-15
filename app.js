@@ -25,16 +25,22 @@ startGame.addEventListener('click', () => {
 
 //Create a getRandomPhraseAsArray Function
 
-function getRandomPhraseAsArray() {
-    const phraseSelect = phrases[Math.floor(Math.random() * phrases.length)];
-    return phraseSelect; 
+function getRandomPhraseAsArray(arr) {
+    let i = Math.floor(Math.random() * arr.length);
+    return arr[i].split(' '); 
 };
+
+console.log(getRandomPhraseAsArray(phrases));
+getRandomPhraseAsArray(phrases);
 
 //Create an addPhraseToDisplay Function
 
-function addPhraseToDisplay() {
-    
+function addPhraseToDisplay(arr) {
+    for (let i = 0; i < arr.length; i += 1) {
+        const li = document.createElement('LI');
+    }
 };
+
 
 
 
