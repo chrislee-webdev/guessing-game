@@ -39,7 +39,13 @@ function addPhraseToDisplay(arr) {
     for (let i = 0; i < arr.length; i += 1) {
         const li = document.createElement('LI');
         const ul = document.getElementById('phrase');
-    }
+        if (  ){
+
+        } else {
+
+        };
+        
+    };
 };
 
 
