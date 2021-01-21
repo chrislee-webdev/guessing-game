@@ -50,4 +50,13 @@ function addPhraseToDisplay(arr) {
 const answer = getRandomPhraseAsArray(phrases);
 addPhraseToDisplay(answer);
 
+//Create a Check Letter Function
 
+function checkLetter(button) {
+    const letters = document.getElementById(li);
+    let correctLetters = null;
+
+    for (let i = 0; i < arr.length; i += 1) {
+
+    }
+};
