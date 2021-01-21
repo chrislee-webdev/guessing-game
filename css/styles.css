@@ -34,6 +34,10 @@ li, ol, ul {
   display: inline-block;
 }
 
+li {
+  margin-bottom: 15px;
+}
+
 h2 {
   margin: 0;
   text-transform: uppercase;

@@ -27,7 +27,7 @@ startGame.addEventListener('click', () => {
 
 function getRandomPhraseAsArray(arr) {
     let i = Math.floor(Math.random() * arr.length);
-    return arr[i].split(' '); 
+    return arr[i].split(''); 
 };
 
 console.log(getRandomPhraseAsArray(phrases));
