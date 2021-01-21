@@ -38,11 +38,16 @@ getRandomPhraseAsArray(phrases);
 function addPhraseToDisplay(arr) {
     for (let i = 0; i < arr.length; i += 1) {
         const li = document.createElement('LI');
-        
-        if (li === arr[i]) {
-            phrase.appendChild(li);
+        phrase.appendChild(li);
+
+        if (li.textContent === ' ') {
+           li.className = 'space'; 
         } else {
-            
+            li.className = 'letter';
         }
-    };
+    }
 };
+const answer = getRandomPhraseAsArray(phrases);
+addPhraseToDisplay(answer);
+
+
