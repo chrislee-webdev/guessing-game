@@ -60,8 +60,8 @@ function checkLetter(button) { //create a function stub and include a parameter 
         if (button === li[i].textContent ) { //create a conditional that compares the text of the button parameter to the text of the li element at the index of the loop
             li.className = 'show'; //if they match, add the 'show' class name to the li
             match.push(button.textContent);//if they match, store the button text in the match variable
-        } else {
-            
-        }
+        };
     }
 };
+
+return match
