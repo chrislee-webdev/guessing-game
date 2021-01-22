@@ -52,11 +52,16 @@ addPhraseToDisplay(answer);
 
 //Create a Check Letter Function
 
-function checkLetter(button) {
-    const letters = document.getElementById(li);
-    let correctLetters = null;
+function checkLetter(button) { //create a function stub and include a parameter for the button that gets clicked
+    const li = document.querySelectorAll(li); //store all the of the li elements inside checkLetter
+    let match = null; //create a variable to store if a match is found and give it the value of null
 
-    for (let i = 0; i < arr.length; i += 1) {
-
+    for (let i = 0; i < li.length; i += 1) { //loop through all of the li elements
+        if (button === li[i].textContent ) { //create a conditional that compares the text of the button parameter to the text of the li element at the index of the loop
+            li.className = 'show'; //if they match, add the 'show' class name to the li
+            match.push(button.textContent);//if they match, store the button text in the match variable
+        } else {
+            
+        }
     }
 };
