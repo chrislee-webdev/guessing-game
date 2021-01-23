@@ -70,5 +70,10 @@ function checkLetter(button) { //create a function stub and include a parameter 
 //Add an Event Listener to the Keyboard
 
 qwerty.addEventListener('click', (event) => { //Create an event listener for the qwerty element that listens for the 'click' event
-  
+    
+    if (event.target.className === 'letter') {
+        event.target.classList.add('chosen');
+    } else {
+        
+    }
 });
