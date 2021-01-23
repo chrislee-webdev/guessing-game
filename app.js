@@ -60,9 +60,15 @@ function checkLetter(button) { //create a function stub and include a parameter 
 
     for (let i = 0; i < li.length; i += 1) { //loop through all of the li elements
         if (button === li[i].textContent ) { //create a conditional that compares the text of the button parameter to the text of   the li element at the index of the loop
-            li.classList.add = 'show'; //if they match, add the 'show' class name to the li
-            match === li[i].textContent; //if they match, store the button text in the match variable
-            return match;
+            li[i].classList.add('show'); //if they match, add the 'show' class name to the li
+            match === li[i].textContent; //if they match, store the button text in the match variable           
         };
     }
+    return match;
 };
+
+//Add an Event Listener to the Keyboard
+
+qwerty.addEventListener('click', (event) => { //Create an event listener for the qwerty element that listens for the 'click' event
+  
+});
