@@ -70,13 +70,13 @@ function checkLetter(button) { //create a function stub and include a parameter 
 //Add an Event Listener to the Keyboard
 
 qwerty.addEventListener('click', (event) => { //Create an event listener for the qwerty element that listens for the 'click' event
-    const scoreBoard = document.getElementById('scoreboard')
-    const tries = document.querySelectorAll('tries');
 
-   if (event.target.classList === 'letter') {
-       event.target.classList.add('chosen');
+    //Use a conditional to filter out clicks that don't happen on the buttons or if the button already has the 'chosen' class
+    if (event.target.tagName === 'BUTTON') {
+       event.target.classList.add('chosen'); //Add the 'chosen' class to the button that was pressed
+
    } else {
-       scoreBoard.removeChildNode('tries')
-       missed += 1;
+       tries.src = "images/lostStar.png";
    }
+
 });
