@@ -71,10 +71,17 @@ function checkLetter(button) { //create a function stub and include a parameter 
 
 qwerty.addEventListener('click', (event) => { //Create an event listener for the qwerty element that listens for the 'click' event
 
-    //Use a conditional to filter out clicks that don't happen on the buttons or if the button already has the 'chosen' class
+     //Use a conditional to filter out clicks that don't happen on the buttons or if the button already has the 'chosen' class
     if (event.target.tagName === 'BUTTON') {
        event.target.classList.add('chosen'); //Add the 'chosen' class to the button that was pressed
-    }    
-};
+    }
 
-    const correctGuess = checkLetter(button);//Call the checkLetter function and store it in a variable
+    const correctGuess = checkLetter(button);//Call the checkLetter function and assign it to a variable
+
+    if(correctGuess === null) {
+        document.getElementsByTagName('img').innerHTML = '<img src = images/lostHeart.png />';
+    }
+
+    missed += 1;
+});
+
