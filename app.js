@@ -78,11 +78,11 @@ qwerty.addEventListener('click', (event) => { //Create an event listener for the
        const correctGuess = checkLetter(event.target);//Call the checkLetter function and assign it to a variable
 
     //If the checkLetter function does not find a letter, remove one of the heart images and increment the 'missed' counter
-    } else if (correctGuess === null) {
+    if (correctGuess === null) {
         hearts[missed].src = 'images/lostHeart.png';
         missed += 1;
         }
-
+    }
     checkWin();
 });
 
