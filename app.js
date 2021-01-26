@@ -13,8 +13,8 @@ let missed = 0;
 const phrases = [
     "showing off is the fools idea of glory",
     "as you think so shall you become",
-    "the key to immortality is first living a life worth remembering",
-    "Do not pray for an easy life pray for the strength to endure a difficult one",
+    "the key to immortality is first living a life worth remembering ",
+    "do not pray for an easy life pray for the strength to endure a difficult one",
     "knowing is not enough we must apply willing is not enough we must do"
 ];
 
@@ -60,7 +60,7 @@ function checkLetter(button) { //create a function stub and include a parameter 
     let match = null; //create a variable to store if a match is found and give it the value of null
 
     for (let i = 0; i < li.length; i += 1) { //loop through all of the li elements
-        if (button.textContent === li[i].textContent ) { //create a conditional that compares the text of the button parameter to the text of   the li element at the index of the loop
+        if (button.textContent === li[i].textContent ) { //create a conditional that compares the text of the button parameter to the text of the li element at the index of the loop
             li[i].classList.add('show'); //if they match, add the 'show' class name to the li
             match === li[i].textContent; //if they match, store the button text in the match variable           
         };
@@ -87,11 +87,18 @@ qwerty.addEventListener('click', (event) => { //Create an event listener for the
 
 //Create a checkWin function
 
-const letter = document.querySelectorAll('letter'); //Create a variable to store the li elements that have the class name 'letter'
-const show = document.querySelectorAll('show'); //Create a variable to store the li elements that have the class name 'show'
+function checkWin() {
+    const letter = document.getElementsByClassName('letter'); //Create a variable to store the li elements that have the same class name as 'letter'
+    const show = document.getElementsByClassName('show'); //Create a variable to store the li elements that have the same class name as 'show'
 
-if (letter.length === show.length) {
-    overlay.appendChild('win');
-    
+    if (letter.length === show.length) { //Check if the length of the 2 variable are the same. If they are, display the win overlay
+        overlay.className = 'win'; //Create the win overlay by adding the 'win' class to the start overlay
+        overlay.innerHTML = "The successful warrior is the average person, with laser-like focus."; //Change the headline text of the start overlay to show a person won
+        overlay.style.display = 'flex'; //Change the display property of the overlay to 'flex'
+
+    } else if (missed > 4) { //Check if the misssed counter is greater than 4. If they are, display the lose overlay
+        overlay.className = 'lose'; //Create the lose overlay by adding the 'lose' class to the start overlay
+        overlay.innerHTML = "Forget about winning and losing. Forget about pride and pain"; //Change the headline text of the start overlay to show a person lost
+        overlay.style.display = 'flex'; //Change the display property of the overlay to 'flex'
+    }
 };
-
