@@ -62,7 +62,7 @@ function checkLetter(button) { //create a function stub and include a parameter 
     for (let i = 0; i < li.length; i += 1) { //loop through all of the li elements
         if (button.textContent === li[i].textContent ) { //create a conditional that compares the text of the button parameter to the text of the li element at the index of the loop
             li[i].classList.add('show'); //if they match, add the 'show' class name to the li
-            match === li[i].textContent; //if they match, store the button text in the match variable           
+            match === li[i].textContent; //if they match, store the button text in the match variable
         };
     }
     return match;
@@ -78,11 +78,12 @@ qwerty.addEventListener('click', (event) => { //Create an event listener for the
        const correctGuess = checkLetter(event.target);//Call the checkLetter function and assign it to a variable
 
     //If the checkLetter function does not find a letter, remove one of the heart images and increment the 'missed' counter
-    if (correctGuess === null) {
+    } else if (correctGuess === null) {
         hearts[missed].src = 'images/lostHeart.png';
         missed += 1;
         }
-    }
+
+    checkWin();
 });
 
 //Create a checkWin function
@@ -96,9 +97,15 @@ function checkWin() {
         overlay.innerHTML = "The successful warrior is the average person, with laser-like focus."; //Change the headline text of the start overlay to show a person won
         overlay.style.display = 'flex'; //Change the display property of the overlay to 'flex'
 
-    } else if (missed > 4) { //Check if the misssed counter is greater than 4. If they are, display the lose overlay
+    } else if (missed >= 5) { //Check if the misssed counter is greater than 4. If they are, display the lose overlay
         overlay.className = 'lose'; //Create the lose overlay by adding the 'lose' class to the start overlay
         overlay.innerHTML = "Forget about winning and losing. Forget about pride and pain"; //Change the headline text of the start overlay to show a person lost
         overlay.style.display = 'flex'; //Change the display property of the overlay to 'flex'
     }
+
 };
+
+
+
+
+
