@@ -4,6 +4,7 @@ const qwerty = document.getElementById('qwerty');
 const phrase = document.getElementById('phrase');
 const startGame = document.querySelector('.btn__reset');
 const overlay = document.getElementById('overlay');
+const hearts = document.querySelectorAll('img[src = "images/liveHeart.png');
 
 let missed = 0;
 
@@ -59,7 +60,7 @@ function checkLetter(button) { //create a function stub and include a parameter 
     let match = null; //create a variable to store if a match is found and give it the value of null
 
     for (let i = 0; i < li.length; i += 1) { //loop through all of the li elements
-        if (button === li[i].textContent ) { //create a conditional that compares the text of the button parameter to the text of   the li element at the index of the loop
+        if (button.textContent === li[i].textContent ) { //create a conditional that compares the text of the button parameter to the text of   the li element at the index of the loop
             li[i].classList.add('show'); //if they match, add the 'show' class name to the li
             match === li[i].textContent; //if they match, store the button text in the match variable           
         };
@@ -74,14 +75,13 @@ qwerty.addEventListener('click', (event) => { //Create an event listener for the
      //Use a conditional to filter out clicks that don't happen on the buttons or if the button already has the 'chosen' class
     if (event.target.tagName === 'BUTTON') {
        event.target.classList.add('chosen'); //Add the 'chosen' class to the button that was pressed
-    }
-
-    const correctGuess = checkLetter(button);//Call the checkLetter function and assign it to a variable
+       const correctGuess = checkLetter(event.target);//Call the checkLetter function and assign it to a variable
 
     //If the checkLetter function does not find a letter, remove one of the heart images and increment the 'missed' counter
-    if(correctGuess === null) {
-        document.getElementsByTagName('img').innerHTML = '<img src = images/lostHeart.png />';
+    if (correctGuess === null) {
+        hearts[missed].src = 'images/lostHeart.png';
         missed += 1;
+        }
     }
 });
 
