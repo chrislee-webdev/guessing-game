@@ -85,3 +85,13 @@ qwerty.addEventListener('click', (event) => { //Create an event listener for the
     }
 });
 
+//Create a checkWin function
+
+const letter = document.querySelectorAll('letter'); //Create a variable to store the li elements that have the class name 'letter'
+const show = document.querySelectorAll('show'); //Create a variable to store the li elements that have the class name 'show'
+
+if (letter.length === show.length) {
+    overlay.appendChild('win');
+    
+};
+
