@@ -15,7 +15,7 @@ const phrases = [
     "as you think so shall you become",
     "the key to immortality is first living a life worth remembering ",
     "do not pray for an easy life pray for the strength to endure a difficult one",
-    "knowing is not enough we must apply willing is not enough we must do"
+    "be happy but never satisfied"
 ];
 
 //Attach an Event Listener to the 'Start Game' button to hide the start screen overlay
@@ -48,6 +48,7 @@ function addPhraseToDisplay(arr) {
         } else {
            li.className = 'letter';
         }
+
     }
 };
 const answer = getRandomPhraseAsArray(phrases);
@@ -82,6 +83,7 @@ qwerty.addEventListener('click', (event) => { //Create an event listener for the
         hearts[missed].src = 'images/lostHeart.png';
         missed += 1;
         }
+
     }
     checkWin();
 });
@@ -94,15 +96,13 @@ function checkWin() {
 
     if (letter.length === show.length) { //Check if the length of the 2 variable are the same. If they are, display the win overlay
         overlay.className = 'win'; //Create the win overlay by adding the 'win' class to the start overlay
-        overlay.innerHTML = '<h1>"The successful warrior is the average person, with laser-like focus."</h1>'; //Change the headline text of the start overlay to show a person won
+        overlay.innerHTML = '<h1>"The successful warrior is the average person, with laser-like focus"</h1>'; //Change the headline text of the start overlay to show a person won
         overlay.style.display = 'flex'; //Change the display property of the overlay to 'flex'
-
-
+        
     } else if (missed > 4) { //Check if the misssed counter is greater than 4. If they are, display the lose overlay
         overlay.className = 'lose'; //Create the lose overlay by adding the 'lose' class to the start overlay
         overlay.innerHTML = '<h1>"Forget about winning and losing. Forget about pride and pain"<h1>'; //Change the headline text of the start overlay to show a person lost
         overlay.style.display = 'flex'; //Change the display property of the overlay to 'flex'
-        overlay.appendChild('startGame');
 
     }
 
