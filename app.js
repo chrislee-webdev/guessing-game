@@ -84,6 +84,7 @@ qwerty.addEventListener('click', (event) => { //Create an event listener for the
         missed += 1;
         }
 
+        event.target.disabled = true;
     }
     checkWin();
 });
