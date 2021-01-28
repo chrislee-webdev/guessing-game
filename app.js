@@ -97,12 +97,12 @@ function checkWin() {
 
     if (letter.length === show.length) { //Check if the length of the 2 variable are the same. If they are, display the win overlay
         overlay.className = 'win'; //Create the win overlay by adding the 'win' class to the start overlay
-        overlay.innerHTML = '<h1>"The successful warrior is the average person, with laser-like focus"</h1>'; //Change the headline text of the start overlay to show a person won
+        overlay.innerHTML += '<h1>"The successful warrior is the average person, with laser-like focus"</h1>'; //Change the headline text of the start overlay to show a person won
         overlay.style.display = 'flex'; //Change the display property of the overlay to 'flex'
         
     } else if (missed > 4) { //Check if the misssed counter is greater than 4. If they are, display the lose overlay
         overlay.className = 'lose'; //Create the lose overlay by adding the 'lose' class to the start overlay
-        overlay.innerHTML = '<h1>"Forget about winning and losing. Forget about pride and pain"<h1>'; //Change the headline text of the start overlay to show a person lost
+        overlay.innerHTML += '<h1>"Forget about winning and losing. Forget about pride and pain"<h1>'; //Change the headline text of the start overlay to show a person lost
         overlay.style.display = 'flex'; //Change the display property of the overlay to 'flex'
 
     }
