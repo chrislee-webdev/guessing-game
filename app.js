@@ -13,8 +13,8 @@ let missed = 0;
 const phrases = [
     "showing off is the fools idea of glory",
     "as you think so shall you become",
-    "the key to immortality is first living a life worth remembering ",
-    "do not pray for an easy life pray for the strength to endure a difficult one",
+    "willing is not enough we must do ",
+    "real living is living for others",
     "be happy but never satisfied"
 ];
 
@@ -95,19 +95,20 @@ function checkWin() {
     const letter = document.getElementsByClassName('letter'); //Create a variable to store the li elements that have the same class name as 'letter'
     const show = document.getElementsByClassName('show'); //Create a variable to store the li elements that have the same class name as 'show'
 
+    let phraseString = answer.join('');//Join the array back in to a string to display
+
     if (letter.length === show.length) { //Check if the length of the 2 variable are the same. If they are, display the win overlay
         overlay.className = 'win'; //Create the win overlay by adding the 'win' class to the start overlay
-        let correct = answer.join('');
-        overlay.innerHTML = `Congratulations! The phrase was "${correct}"`
+        
+        overlay.innerHTML = `Congratulations! The phrase was "${phraseString}." Refrech the browser to play again`
         // overlay.innerHTML = '<h1>"The successful warrior is the average person, with laser-like focus"</h1>'; 
         //Change the headline text of the start overlay to show a person won
         overlay.style.display = 'flex'; //Change the display property of the overlay to 'flex'
         
     } else if (missed > 4) { //Check if the misssed counter is greater than 4. If they are, display the lose overlay
         overlay.className = 'lose'; //Create the lose overlay by adding the 'lose' class to the start overlay
-        overlay.innerHTML = '<h1>"Forget about winning and losing. Forget about pride and pain"<h1>'; //Change the headline text of the start overlay to show a person lost
+        overlay.innerHTML = `Sorry! The phrase was "${phraseString}." Refrech the browser to play again`; //Change the headline text of the start overlay to show a person lost
         overlay.style.display = 'flex'; //Change the display property of the overlay to 'flex'
-
     }
 
 };
