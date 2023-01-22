@@ -11,11 +11,12 @@ let missed = 0;
 //Create an Array Named Phrases
 
 const phrases = [
-    "showing off is the fools idea of glory",
-    "as you think so shall you become",
-    "the key to immortality is first living a life worth remembering ",
-    "do not pray for an easy life pray for the strength to endure a difficult one",
-    "be happy but never satisfied"
+    "a winner is you"
+    // "showing off is the fools idea of glory",
+    // "as you think so shall you become",
+    // "the key to immortality is first living a life worth remembering ",
+    // "do not pray for an easy life pray for the strength to endure a difficult one",
+    // "be happy but never satisfied"
 ];
 
 //Attach an Event Listener to the 'Start Game' button to hide the start screen overlay
@@ -97,8 +98,9 @@ function checkWin() {
 
     if (letter.length === show.length) { //Check if the length of the 2 variable are the same. If they are, display the win overlay
         overlay.className = 'win'; //Create the win overlay by adding the 'win' class to the start overlay
-        // overlay.innerHTML = 
-        // overlay.innerHTML = '<h1>"The successful warrior is the average person, with laser-like focus"</h1>'; 
+        let correct = answer.join(addPhraseToDisplay(phrase));
+        // overlay.innerHTML = `Congrats! The answer was ${correct}`
+        overlay.innerHTML = '<h1>"The successful warrior is the average person, with laser-like focus"</h1>'; 
         //Change the headline text of the start overlay to show a person won
         overlay.style.display = 'flex'; //Change the display property of the overlay to 'flex'
         
